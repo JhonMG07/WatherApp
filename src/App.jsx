@@ -30,7 +30,7 @@ function App() {
 
     try {
       if (!city.trim()) throw { message: "Please enter a city name" };
-      const response = await fetch(`${API_WEATHER}${city}`);
+      const response = await fetch(`${API_WEATHER}${city}`,{ referrerPolicy: "unsafe_url" });
       const data = await response.json();
 
       if (data.error) throw { message: data.error.message };
